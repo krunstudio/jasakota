@@ -1,15 +1,16 @@
 import { combineReducers } from 'redux';
 
-const categoryReducer = (state = {
+const jasaReducer = (state = {
 	loadingCategory: true,
-	dataCategory: []
+	dataCategory: [],
+	dataList:[]
 
 }, action) => {
 	switch (action.type) {
 		case 'FETCH_CATEGORY_PENDING':
 			return {
 				...state,
-				loadingForumDetail: true
+				loadingCategory: true
 			}
 		case 'FETCH_CATEGORY_SUCCESS':
 			return {
@@ -17,13 +18,24 @@ const categoryReducer = (state = {
 				dataCategory: action.payload,
 				loadingCategory: false
 			}
+		case 'FETCH_LIST_PENDING':
+			return {
+				...state,
+				loadingList: true
+			}
+		case 'FETCH_LIST_SUCCESS':
+			return {
+				...state,
+				dataList: action.payload,
+				loadingList: false
+			}
 		default:
 			return state
 	}
 };
 
 const rootReducer = combineReducers({
-	category: categoryReducer
+	jasa: jasaReducer
 });
 
 export default rootReducer;

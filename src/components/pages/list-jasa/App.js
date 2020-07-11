@@ -1,7 +1,9 @@
-import React from 'react';
-import Navbar from '../navbar';
+import React, {useEffect} from 'react';
+import Navbar from '../../navbar';
 
-const listJasa = props => {
+
+const Listjasa = props => {
+    let data = props.dataList;
     return (
         <div>
             <Navbar {...props}/>
@@ -11,27 +13,27 @@ const listJasa = props => {
                         <a>Kategori Guru</a>
                     </div>
                     <div className="row justify-content-center">
-                        <div className="col-md-3">
+                        <div className="col-md-3 col-4">
                             <img className='image-list' src="https://media.suara.com/pictures/480x260/2019/12/24/78259-ilustrasi-guru-mengajar.jpg"/>
                         </div>
-                        <div className="col-md-9">
+                        <div className="col-md-9 col-8">
                             <div>
-                                <h5>Guru bahasa inggris</h5>
+                                <h5>{data.title}</h5>
                             </div>
                             <div>
-                                <a>Lokasi : Darussalam</a>
+                                <a>Lokasi : {data.location}</a>
                             </div>
                             <div>
-                                <a>Harga : Rp. 750.000</a>
+                                <a>Harga : Rp {data.price}</a>
                             </div>
                         </div>
                     </div>
                     <hr/>
                     <div className="row justify-content-center">
-                        <div className="col-md-3">
+                        <div className="col-md-3 col-4">
                             <img className='image-list' src="https://cdn1-production-images-kly.akamaized.net/ncc2QvLsjojPCyV1OM1uME8mS14=/640x640/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1729978/original/055302400_1507191383-Banner_Hari_Guru.jpg"/>
                         </div>
-                        <div className="col-md-9">
+                        <div className="col-md-9 col-8">
                             <div>
                                 <h5>Guru Les Matematika</h5>
                             </div>
@@ -70,4 +72,5 @@ const listJasa = props => {
     )
 }
 
-export default listJasa;
+
+export default Listjasa;

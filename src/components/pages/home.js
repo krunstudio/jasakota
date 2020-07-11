@@ -17,7 +17,7 @@ const Home = props => {
                     {props.dataCategory.map((item,key) =>{
                         return(
                             <div className="col-md-4">
-                                <a href='/list-jasa'>
+                                <a href={'/kategori/' + item.id_master_categories}>
                                     <div  className="card" style={{height:200, margin:20}}>
                                     </div>
                                 </a>
