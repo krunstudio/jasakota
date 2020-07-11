@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/jasakota/static/css/main.8716abab.chunk.css",
+    "main.js": "/jasakota/static/js/main.ccbfe7bd.chunk.js",
+    "main.js.map": "/jasakota/static/js/main.ccbfe7bd.chunk.js.map",
+    "runtime-main.js": "/jasakota/static/js/runtime-main.e5761a7b.js",
+    "runtime-main.js.map": "/jasakota/static/js/runtime-main.e5761a7b.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/jasakota/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.7b7694f3.chunk.js": "/jasakota/static/js/2.7b7694f3.chunk.js",
+    "static/js/2.7b7694f3.chunk.js.map": "/jasakota/static/js/2.7b7694f3.chunk.js.map",
+    "index.html": "/jasakota/index.html",
+    "precache-manifest.c68a43a124b16b0143be4b5f9c7da5ef.js": "/jasakota/precache-manifest.c68a43a124b16b0143be4b5f9c7da5ef.js",
+    "service-worker.js": "/jasakota/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/jasakota/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.8716abab.chunk.css.map": "/jasakota/static/css/main.8716abab.chunk.css.map",
+    "static/js/2.7b7694f3.chunk.js.LICENSE.txt": "/jasakota/static/js/2.7b7694f3.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/jasakota/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e5761a7b.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.7b7694f3.chunk.js",
+    "static/css/main.8716abab.chunk.css",
+    "static/js/main.ccbfe7bd.chunk.js"
+  ]
+}
