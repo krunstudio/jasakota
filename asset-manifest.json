@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/jasakota/static/css/main.8716abab.chunk.css",
-    "main.js": "/jasakota/static/js/main.2f748313.chunk.js",
-    "main.js.map": "/jasakota/static/js/main.2f748313.chunk.js.map",
+    "main.js": "/jasakota/static/js/main.4a9da783.chunk.js",
+    "main.js.map": "/jasakota/static/js/main.4a9da783.chunk.js.map",
     "runtime-main.js": "/jasakota/static/js/runtime-main.e5761a7b.js",
     "runtime-main.js.map": "/jasakota/static/js/runtime-main.e5761a7b.js.map",
     "static/css/2.af3c1da9.chunk.css": "/jasakota/static/css/2.af3c1da9.chunk.css",
     "static/js/2.e3262b85.chunk.js": "/jasakota/static/js/2.e3262b85.chunk.js",
     "static/js/2.e3262b85.chunk.js.map": "/jasakota/static/js/2.e3262b85.chunk.js.map",
     "index.html": "/jasakota/index.html",
-    "precache-manifest.41e265f5c0719c706245b8d39aeecfaa.js": "/jasakota/precache-manifest.41e265f5c0719c706245b8d39aeecfaa.js",
+    "precache-manifest.e2ae70e5da91ce35de5d4d1c2cde3f53.js": "/jasakota/precache-manifest.e2ae70e5da91ce35de5d4d1c2cde3f53.js",
     "service-worker.js": "/jasakota/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/jasakota/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.8716abab.chunk.css.map": "/jasakota/static/css/main.8716abab.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.e3262b85.chunk.js",
     "static/css/main.8716abab.chunk.css",
-    "static/js/main.2f748313.chunk.js"
+    "static/js/main.4a9da783.chunk.js"
   ]
 }
