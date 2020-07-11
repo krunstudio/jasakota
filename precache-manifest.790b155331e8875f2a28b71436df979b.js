@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4691a5205f637b6e1e8811863642d15d",
+    "revision": "876fe77b0035b168a0f2ba53b221365b",
     "url": "/jasakota/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jasakota/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "f2f167c15c179b4d9d96",
+    "revision": "dda1a2b146e69b8aec69",
     "url": "/jasakota/static/css/main.8716abab.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jasakota/static/js/2.7b7694f3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f2f167c15c179b4d9d96",
-    "url": "/jasakota/static/js/main.ccbfe7bd.chunk.js"
+    "revision": "dda1a2b146e69b8aec69",
+    "url": "/jasakota/static/js/main.93b5cb01.chunk.js"
   },
   {
     "revision": "2880404ea804eabac190",
