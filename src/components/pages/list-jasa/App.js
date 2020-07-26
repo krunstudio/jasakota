@@ -34,7 +34,7 @@ const Listjasa = (props, {match}) => {
                             <div>
                                 <div className="row justify-content-center">
                                     <a href={`/${item.id_service_provider}/detail`} className="col-md-3 col-4">
-                                        <img className='image-list' src="https://cdn1-production-images-kly.akamaized.net/ncc2QvLsjojPCyV1OM1uME8mS14=/640x640/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1729978/original/055302400_1507191383-Banner_Hari_Guru.jpg"/>
+                                        <img className='image-list' src="https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png"/>
                                     </a>
                                     <div className="col-md-9 col-8">
                                         <a href={`/${item.id_service_provider}/detail`}>
@@ -58,7 +58,7 @@ const Listjasa = (props, {match}) => {
                             <div>
                                 <div className="row justify-content-center">
                                     <a href={`/${item.id_service_provider}/detail`} className="col-md-3 col-4">
-                                        <img className='image-list' src="https://cdn1-production-images-kly.akamaized.net/ncc2QvLsjojPCyV1OM1uME8mS14=/640x640/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1729978/original/055302400_1507191383-Banner_Hari_Guru.jpg"/>
+                                        <img className='image-list' src="https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png"/>
                                     </a>
                                     <div className="col-md-9 col-8">
                                         <a href={`/${item.id_service_provider}/detail`}>
