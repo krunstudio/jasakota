@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const Navbar = props => {
+
+    let data = props.data;
+
     return (
         <div className="navbar-light bg-light">
         <div className="row justify-content-center">
@@ -24,10 +27,10 @@ const Navbar = props => {
                   <a className="nav-link" href="#">Masuk</a>
                 </li>
               </ul>
-              <form className="form-inline my-2 my-lg-0">
-                <input className="form-control mr-sm-2" type="search" placeholder="Cari disini"/>
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Cari</button>
+              <form className="form-inline my-2 my-lg-0" onSubmit={props.cariJasa}>
+                <input className="form-control mr-sm-2" type="input" value={data.keyword} id="search" name='keyword' placeholder="Cari disini" onChange={e => props.setData({ ...data, keyword: e.target.value })}/>
               </form>
+              <button className="btn btn-outline-success my-2 my-sm-0" onClick={props.cariJasa}>Cari</button>
             </div>
           </nav>
         </div>

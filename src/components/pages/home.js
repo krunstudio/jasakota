@@ -3,8 +3,7 @@ import Navbar from '../navbar';
 
 const Home = props => {
     return (
-        <div>
-            <Navbar/>
+        <div> 
             <div className="row justify-content-center">
                 <div className="col-md-7" style={{height:400, width:'100%', margin:30}}>
                 <div style={{marginBottom:50}}>
@@ -17,7 +16,7 @@ const Home = props => {
                     {props.dataCategory.map((item,key) =>{
                         return(
                             <div className="col-md-4">
-                                <a href={'/kategori/' + item.id_master_categories}>
+                                <a href={'/kategori/' + item.title.replace(/ /g, '')}>
                                     <div  className="card" style={{height:200, margin:20}}>
                                     </div>
                                 </a>

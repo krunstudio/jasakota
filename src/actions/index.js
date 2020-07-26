@@ -1,13 +1,14 @@
 import axios from 'axios'
 
 
+
 export const fetchCategory = (url, slug) => {
 	return (dispatch) => {
 		dispatch({
 			type: 'FETCH_CATEGORY_PENDING'
 		});
 
-		return axios.get('https://cors-anywhere.herokuapp.com/http://api.devsoft.my.id/public/Api/categories')
+		return axios.get('http://api.devsoft.my.id/public/Api/categories')
 			.then(response => {
 				let payload = response.data;
 
@@ -22,13 +23,13 @@ export const fetchCategory = (url, slug) => {
 	}
 }
 
-export const fetchList = (url, slug) => {
+export const fetchList = (keyword) => {
 	return (dispatch) => {
 		dispatch({
 			type: 'FETCH_LIST_PENDING'
 		});
-
-		return axios.get('https://cors-anywhere.herokuapp.com/http://api.devsoft.my.id/public/Api/listjasa/show/1')
+		
+		return axios.get(`http://api.devsoft.my.id/public/Api/search/${keyword}/page-1`)
 			.then(response => {
 				let payload = response.data;
 
@@ -42,3 +43,4 @@ export const fetchList = (url, slug) => {
 			})
 	}
 }
+

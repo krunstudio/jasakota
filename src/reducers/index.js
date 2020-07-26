@@ -3,7 +3,8 @@ import { combineReducers } from 'redux';
 const jasaReducer = (state = {
 	loadingCategory: true,
 	dataCategory: [],
-	dataList:[]
+	dataList:[],
+	keyword: ''
 
 }, action) => {
 	switch (action.type) {

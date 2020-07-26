@@ -1,42 +1,57 @@
-import React, {useEffect} from 'react';
-import {  BrowserRouter as Router,  Switch,  Route,  Link} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {  BrowserRouter as Router,  Switch,  Route,  Link, useParams} from "react-router-dom";
 import './App.css';
 import { fetchCategory, fetchList} from '../actions/index';
 import { connect } from 'react-redux';
 import Home from './pages/home';
 import Listjasa from './pages/list-jasa/App';
+import Navbar from '../components/navbar';
+import Details from '../components/pages/details/app'
+import Routers from '../routes'
+
+
+
+
+
 
 const App = props => {
+
+  let slug = window.location.pathname.replace('/', '')
+
+
   useEffect(() => {
 		props.fetchCategory()
   }, []);
   
   useEffect(() => {
-		props.fetchList()
-	}, []);
+		props.fetchList(slug)
+  }, []);
+  
+
+  const [data, setData] = useState({
+    keyword: '',
+    slug : ''
+	})
+
+    const cariJasa = e => {
+      if (e) e.preventDefault();
+        let redirect = '/' + data.keyword
+        window.location.href = redirect;
+    }
 
 	props = {
 		...props
   }
   
       return (
-        <Router>
-          <div>
-            <Switch>
-              <Route path="/kategori/">
-                <Listjasa {...props}/>
-              </Route>
-              {/* <Route path="/users">
-                <Users />
-              </Route> */}
-              <Route path="/">
-                <Home {...props}/>
-              </Route>
-            </Switch>
-          </div>
-        </Router>
+        <div>
+          <Navbar {...props} data={data} cariJasa={cariJasa} setData={setData}/>
+          <Routers {...props} slug={slug}/>
+        </div>
       );
     }
+
+
 
 const mapStateToProps = state => {
 	return {
@@ -50,8 +65,8 @@ const mapDispatchToProps = dispatch => {
 		fetchCategory: () => {
 			dispatch(fetchCategory())
     },
-    fetchList: () => {
-			dispatch(fetchList())
+    fetchList: (keyword) => {
+			dispatch(fetchList(keyword))
 		}
 	}
 }
