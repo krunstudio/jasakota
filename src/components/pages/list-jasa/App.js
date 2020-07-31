@@ -1,12 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import Navbar from '../../navbar';
+import {useLocation} from "react-router-dom";
 import axios from 'axios'
 
 
 
 const Listjasa = (props, {match}) => {
 
-    const api = (props.match.path == '/kategori/:id') ? `http://api.devsoft.my.id/public/Api/categories/${props.match.params.id}/1` : `http://api.devsoft.my.id/public/Api/search/${props.slug}/page-1`
+    const useQuery = () => {
+        return new URLSearchParams(useLocation().search);
+      }
+
+    let query = useQuery();
+    let page = query.get("page")
+
+    const api = (props.match.path == '/kategori/:id') ? `http://api.devsoft.my.id/public/Api/categories/${props.match.params.id}/1` : `http://api.devsoft.my.id/public/Api/search/${props.slug}/page-${page}`
     const [data, setData] = useState([]);
 
     
@@ -19,8 +26,20 @@ const Listjasa = (props, {match}) => {
         })
     }, []);
 
+
+    let pageNumber = [];
+    let i = 1;
+    let x;
+    
+    while (i < 10) {
+        
+        x = <li className={(i == page) ? 'page-item active font-white' : 'page-item'}><a className="page-link" href={"?page=" + i}>{i}</a></li>;
+        pageNumber.push(x)
+        i++;
+      }
+    
+
     const Jasa = (props.match.path == '/kategori/:id') ? data.search : data
-    console.log(data)
     return (
         <div>
             <div className="row justify-content-center">
@@ -80,19 +99,11 @@ const Listjasa = (props, {match}) => {
                     <div className="row justify-content-center">
                         <nav aria-label="...">
                             <ul className="pagination">
-                                <li className="page-item disabled">
-                                <span className="page-link">Previous</span>
+                                <li className={ (page == 1) ? "page-item disabled" : "page-item"}>
+                                <a className="page-link" href={'?page='+ (parseInt(page)-1)}>Previous</a>
                                 </li>
-                                <li className="page-item active"><a className="page-link" href="#">1</a></li>
-                                <li className="page-item">
-                                <span className="page-link">
-                                    2
-                                    <span className="sr-only">(current)</span>
-                                </span>
-                                </li>
-                                <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                <li className="page-item">
-                                <a className="page-link" href="#">Next</a>
+                                {pageNumber}
+                                <li className="page-item"><a className="page-link" href={'?page='+ (parseInt(page)+1)}>Next</a>
                                 </li>
                             </ul>
                         </nav>
