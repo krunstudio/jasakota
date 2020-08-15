@@ -41,14 +41,30 @@ const Details = (props, tes) => {
                         <a>{`Harga :  ${data.price}`}</a>
                     </div>
                     <div className="row justify-content-center">
-                        <center>
-                            <a href={telp} style={{margin:10}}>
-                                <button className="btn btn-primary"><i className="fa fa-phone-square"></i>{data.whatsapp}</button>
-                            </a>
-                            <a href={whatsapp} style={{margin:10}}>
-                                <div className="btn btn-primary">{data.whatsapp}</div>
-                            </a>
-                        </center>
+                        <div>
+                            <center  className='d-md-block d-none'>
+                                <a href={telp} style={{margin:10}}>
+                                    <button className="btn btn-primary"><img src='https://www.suunto.com/contentassets/b190b20bd1fd4f67a432fd503ce976ae/icon-incoming-call.png' className='whatsapp-icon'/>{data.whatsapp}</button>
+                                </a>
+                                <a href={whatsapp} style={{margin:10}}>
+                                    <div className="btn btn-primary"><img src='https://seeklogo.com/images/W/whatsapp-icon-logo-6E793ACECD-seeklogo.com.png' className='whatsapp-icon'/>{data.whatsapp}</div>
+                                </a>
+                            </center>
+                        </div>
+                        {/* <div>
+                            <center>
+
+                                    <a href={telp} style={{margin:10}}>
+                                        <button className="btn btn-primary">Hubungi Penyedia Jasa</button>
+                                    </a>
+
+
+                                    <a href={whatsapp} style={{margin:10}}>
+                                        <div className="btn btn-primary">Whatsapp Penyedia Jasa</div>
+                                    </a>
+
+                            </center>
+                        </div> */}
                     </div>
                 </div>
             </div>

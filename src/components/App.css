@@ -68,3 +68,10 @@ a {
 .page-item.active .page-link {
   color:white !important
 }
+
+.whatsapp-icon{
+  height: 25px;
+  width: 25px;
+  margin-right: 8px;
+  margin-bottom: 3px;
+}

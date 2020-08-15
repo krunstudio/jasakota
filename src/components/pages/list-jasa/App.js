@@ -30,21 +30,25 @@ const Listjasa = (props, {match}) => {
     let pageNumber = [];
     let i = 1;
     let x;
+
+    console.log(data && data && data.total_page)
+    let total_page =  data.total_page + 1
     
-    while (i < 10) {
+    while (i < total_page) {
         
         x = <li className={(i == page) ? 'page-item active font-white' : 'page-item'}><a className="page-link" href={"?page=" + i}>{i}</a></li>;
         pageNumber.push(x)
         i++;
       }
-    
-    const Jasa = (props.match.path == '/kategori/:id') ? data.search : data
+
+    let Jasa = (props.match.path == '/kategori/:id') ? data.data : data
+
     return (
         <div>
             <div className="row justify-content-center">
                 <div className="col-md-7" style={{height:400, width:'100%', margin:30}}>
                     <div style={{marginBottom:50}}>
-                        <a>Menampilkan Kategori {data.category_title}</a>
+                        <a>{(data.category_title)? 'Menampilkan kategori ' + data.category_title : (props.match.params.slug === undefined)? 'Belum ada jasa untuk kategori ini' : (data.data && data.data.length < 1)? 'Hasil pencarian untuk '  + props.match.params.slug + ' tidak ditemukan' : 'Menampilan hasil pencarian ' + props.match.params.slug}</a>
                     </div>
                     {(props.match.path == '/kategori/:id') ?
                          Jasa && Jasa.map((item, key) =>{
@@ -71,7 +75,7 @@ const Listjasa = (props, {match}) => {
                         )
                         } )
                         :
-                         Jasa.map((item, key) =>{
+                        data.data && data.data.map((item, key) =>{
                             return (
                             <div>
                                 <div className="row justify-content-center">
@@ -93,7 +97,8 @@ const Listjasa = (props, {match}) => {
                                 <hr style={{marginBottom:10}}/>
                             </div>
                         )
-                        } )}
+                        } )
+                        }
 
                     <div className="row justify-content-center">
                         <nav aria-label="...">
@@ -102,7 +107,7 @@ const Listjasa = (props, {match}) => {
                                 <a className="page-link" href={'?page='+ (parseInt(page)-1)}>Previous</a>
                                 </li>
                                 {pageNumber}
-                                <li className="page-item"><a className="page-link" href={'?page='+ (parseInt(page)+1)}>Next</a>
+                                <li className={ (page == data.total_page) ? "page-item disabled" : "page-item"}><a className="page-link" href={'?page='+ (parseInt(page)+1)}>Next</a>
                                 </li>
                             </ul>
                         </nav>
