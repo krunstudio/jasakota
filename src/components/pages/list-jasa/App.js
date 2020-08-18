@@ -13,9 +13,9 @@ const Listjasa = (props, {match}) => {
     let query = useQuery();
     let page = (query.get("page") === null) ? '1' : query.get("page")
 
-    const api = (props.match.path == '/kategori/:id') ? `http://api.devsoft.my.id/public/Api/categories/${props.match.params.id}/${page}` : `http://api.devsoft.my.id/public/Api/search/${props.slug}/page-${page}`
+    const api = (props.match.path == '/kategori/:id') ? `http://api.devsoft.my.id/public/Api/categories/${props.match.params.id}/${page}` : `http://api.devsoft.my.id/public/Api/search/${props.match.params.slug}/page-${page}`
     const [data, setData] = useState([]);
-
+      console.log(api)
     
 
     useEffect(() => {
