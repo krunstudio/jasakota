@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import image from '../../../assets/image2.jpg'
+
 
 const Details = (props, tes) => {
 
@@ -23,7 +25,8 @@ const Details = (props, tes) => {
             <div className="row justify-content-center">
                 <div className="col-md-7" style={{height:400, width:'100%', margin:30}}>
                     <div style={{marginBottom:50}}>
-                        <img className="card detail-image" src="https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png"></img>
+                        {/* <img className="card detail-image" src="https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png"></img> */}
+                        <img className="card detail-image" src={image}></img>
                     </div>
                     <div>
                         <hr style={{marginBottom:50}}/>

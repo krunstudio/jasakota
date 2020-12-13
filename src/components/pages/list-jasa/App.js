@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useLocation} from "react-router-dom";
+import image from '../../../assets/image2.jpg'
 import axios from 'axios'
 
 
@@ -80,7 +81,7 @@ const Listjasa = (props, {match}) => {
                             <div>
                                 <div className="row justify-content-center">
                                     <a href={`/${item.id_service_provider}/detail`} className="col-md-3 col-4">
-                                        <img className='image-list' src="https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png"/>
+                                        <img className='image-list' src={image}/>
                                     </a>
                                     <div className="col-md-9 col-8">
                                         <a href={`/${item.id_service_provider}/detail`}>

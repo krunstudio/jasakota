@@ -1,5 +1,7 @@
 import React from 'react';
 import Navbar from '../navbar';
+import image from '../../assets/image2.jpg'
+
 
 const Home = props => {
     return (
@@ -18,7 +20,7 @@ const Home = props => {
                             <div className="col-md-4">
                                 <a href={'/kategori/' + item.title.replace(/ /g, '')}>
                                     <div  className="card" style={{height:200, margin:20}}>
-                                        <img style={{height:'100%'}} src="https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png"/>
+                                        <img style={{height:'100%'}} src={image}/>
                                     </div>
                                 </a>
                                 <div className="text-align-center">
