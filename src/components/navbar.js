@@ -1,12 +1,21 @@
 import React, {useState} from 'react';
+import ModalLogin from '../components/modal/login'
+import { Button, Modal } from 'react-bootstrap';
+
 
 const Navbar = props => {
 
     let data = props.data;
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <div className="navbar-light bg-light">
-        <div className="row justify-content-center">
+        <Modal size="lg" show={show} onHide={handleClose} size="md" aria-labelledby="contained-modal-title-vcenter" centered justify-content="center">
+          <ModalLogin/>
+        </Modal>
+        <div className="row justify-content-center margin-0">
           <nav className="navbar navbar-expand-lg col-md-7">
             <a className="navbar-brand" href="/">Jasakota</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,13 +27,13 @@ const Navbar = props => {
                   <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/listjasas">Iklan saya</a>
+                  <a className="nav-link" href="/iklansaya">Iklan saya</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">Pasang Iklan</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Masuk</a>
+                  <a className="nav-link" href="#" onClick={handleShow}>Masuk</a>
                 </li>
               </ul>
               <form className="form-inline my-2 my-lg-0" onSubmit={props.cariJasa}>

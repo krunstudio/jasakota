@@ -3,7 +3,7 @@ import {  BrowserRouter as Router,  Switch,  Route} from "react-router-dom";
 import Home from './components/pages/home';
 import Listjasa from './components/pages/list-jasa/App';
 // import Navbar from '../components/navbar';
-import Details from './components/pages/details/app'
+import Details from './components/pages/details/app';
 
 
 const Routes = props => {

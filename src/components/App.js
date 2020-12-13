@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {  BrowserRouter as Router,  Switch,  Route,  Link, useParams} from "react-router-dom";
-import './App.css';
+import './App.scss';
 import { fetchCategory, fetchList} from '../actions/index';
 import { connect } from 'react-redux';
 import Home from './pages/home';
