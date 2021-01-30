@@ -9,7 +9,7 @@ const ModalLogin = () => {
     const handleShow = () => setShow(true);
 
     const login = () => {
-        window.location.href = '/profile'
+        window.location.href = '/profil'
     }
     
     return (

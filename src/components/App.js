@@ -42,6 +42,7 @@ const App = props => {
 	props = {
 		...props
   }
+
   
       return (
         <div>

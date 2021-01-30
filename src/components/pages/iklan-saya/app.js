@@ -5,18 +5,16 @@ import axios from 'axios'
 
 
 
-const Listjasa = (props, {match}) => {
+const IklanSaya = (props, {match}) => {
 
     const useQuery = () => {
         return new URLSearchParams(useLocation().search);
       }
 
-      console.log(props)
-
     let query = useQuery();
     let page = (query.get("page") === null) ? '1' : query.get("page")
 
-    const api = (props.match.path == '/kategori/:id') ? `http://api.devsoft.my.id/public/Api/categories/${props.match.params.id}/page-${page}` : `http://api.devsoft.my.id/public/Api/search/${props.match.params.slug}/page-${page}`
+    const api = (props.match.path == '/kategori/:id') ? `http://api.devsoft.my.id/public/Api/categories/${props.match.params.id}/${page}` : `http://api.devsoft.my.id/public/Api/search/sedot/page-${page}`
     const [data, setData] = useState([]);
       console.log(api)
     
@@ -51,7 +49,7 @@ const Listjasa = (props, {match}) => {
             <div className="row justify-content-center">
                 <div className="col-md-8" style={{height:400, width:'100%', margin:30}}>
                     <div style={{marginBottom:50}}>
-                        <a>{(data.category_title)? 'Menampilkan kategori ' + data.category_title : (props.match.params.slug === undefined)? 'Belum ada jasa untuk kategori ini' : (data.data && data.data.length < 1)? 'Hasil pencarian untuk '  + props.match.params.slug + ' tidak ditemukan' : 'Menampilan hasil pencarian ' + props.match.params.slug}</a>
+                        Daftar iklan kamu
                     </div>
                     {(props.match.path == '/kategori/:id') ?
                          Jasa && Jasa.map((item, key) =>{
@@ -87,13 +85,21 @@ const Listjasa = (props, {match}) => {
                                     </a>
                                     <div className="col-md-9 col-8">
                                         <a href={`/${item.id_service_provider}/detail`}>
-                                            <h5>{item.title}</h5>
+                                            <div className="row col-12 space-between">
+                                                <div><h5>{item.title}</h5></div>
+                                                <div className="subtitle">Edit</div>
+                                            </div>
                                         </a>
-                                        <div>
-                                            <a href={`/${item.id_service_provider}/detail`}>Lokasi : {item.location}</a>
+                                        <div className="row col-12 space-between">
+                                            <div>
+                                                <a className="subtitle" href={`/${item.id_service_provider}/detail`}>Lokasi : {item.location}</a>
+                                            </div>
+                                            <div className="subtitle">
+                                                Hapus
+                                            </div>
                                         </div>
                                         <div>
-                                            <a href={`/${item.id_service_provider}/detail`}>Harga : Rp {item.price}</a>
+                                            <a className="subtitle" href={`/${item.id_service_provider}/detail`}>Harga : Rp {item.price}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -122,4 +128,4 @@ const Listjasa = (props, {match}) => {
 }
 
 
-export default Listjasa;
+export default IklanSaya;

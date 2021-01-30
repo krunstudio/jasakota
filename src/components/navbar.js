@@ -16,7 +16,7 @@ const Navbar = props => {
           <ModalLogin/>
         </Modal>
         <div className="row justify-content-center margin-0">
-          <nav className="navbar navbar-expand-lg col-md-7">
+          <nav className="navbar navbar-expand-lg col-md-8">
             <a className="navbar-brand" href="/">Jasakota</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -27,10 +27,10 @@ const Navbar = props => {
                   <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/iklansaya">Iklan saya</a>
+                  <a className="nav-link" href="/iklan-saya">Iklan saya</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Pasang Iklan</a>
+                  <a className="nav-link" href="pasang-iklan">Pasang Iklan</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#" onClick={handleShow}>Masuk</a>
