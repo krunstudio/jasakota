@@ -6,6 +6,7 @@ import Details from './components/pages/details/app';
 import Profil from './components/pages/profil/app';
 import IklanSaya from './components/pages/iklan-saya/app';
 import PasangIklan from './components/pages/pasang-iklan/app';
+import Register from './components/pages/register/app';
 
 
 
@@ -19,6 +20,8 @@ const Routes = props => {
               <Route path="/kategori/:id" render={(props) => <Listjasa {...props} slug={slug}  />} >
               </Route>
               <Route path="/profil" render={(props) => <Profil {...props} slug={slug}  />} >
+              </Route>
+              <Route path="/register" render={(props) => <Register {...props} slug={slug}  />} >
               </Route>
               <Route path="/pasang-iklan" render={(props) => <PasangIklan {...props} slug={slug}  category={data} />} >
               </Route>

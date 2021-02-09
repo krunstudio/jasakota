@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+const token = localStorage.getItem('token')
+const userId = localStorage.getItem('id')
 
 
 const PasangIklan = (props) => {
@@ -14,10 +16,11 @@ const PasangIklan = (props) => {
         formData.append('description',data.description)
         formData.append('location',data.location)
         formData.append('price',data.price)
-        formData.append('id_master_categories',data.id_master_categories);
-		axios.post(`${url}/pasangiklan/create`, formData, { headers: { 'Content-Type' : 'multipart/form-data' }})
+        formData.append('id_master_categories',data.id_master_categories)
+        formData.append('id_service_provider', userId)
+		axios.post(`${url}/pasangiklan/create`, formData, { headers: { 'Content-Type' : 'multipart/form-data', Authorization: `Bearer ${token}` }})
 			.then(response => {
-					window.location.href = "#";
+					window.location.href = "";
 				
 			})
 			.catch(error => {
@@ -27,9 +30,9 @@ const PasangIklan = (props) => {
     return (
         <div>
             <div className="row justify-content-center">
-                <div className="col-md-8">
+                <div className="col-md-6 card margin-top-60 box-shadow">
                     <div className="col-md-12">
-                    <form>
+                    <form className="form-padding">
                         <div className="form-group">
                             <label>Judul Iklan</label>
                             <input type="text" className="form-control" name="title" placeholder="Masukkan Judul Iklan"  onBlur={e => setData({ ...data, title: e.target.value })}/>

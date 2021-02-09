@@ -2,6 +2,9 @@ import React, {useEffect, useState} from 'react';
 import {useLocation} from "react-router-dom";
 import image from '../../../assets/image2.jpg'
 import axios from 'axios'
+const token = localStorage.getItem('token')
+const userId = localStorage.getItem('id')
+
 
 
 
@@ -14,13 +17,25 @@ const IklanSaya = (props, {match}) => {
     let query = useQuery();
     let page = (query.get("page") === null) ? '1' : query.get("page")
 
-    const api = (props.match.path == '/kategori/:id') ? `http://api.devsoft.my.id/public/Api/categories/${props.match.params.id}/${page}` : `http://api.devsoft.my.id/public/Api/search/sedot/page-${page}`
+    const api = `http://api.devsoft.my.id/public/Api/pasangiklan/show/${userId}`
     const [data, setData] = useState([]);
-      console.log(api)
     
+    const hapusIklan = param => e => {
+        if (e) e.preventDefault();
+        axios.delete(`https://cors-anywhere.herokuapp.com/http://api.devsoft.my.id/public/Api/pasangiklan/delete/${param}`, { headers: {
+            Authorization: `Bearer ${token}`
+                }
+            })
+          .then(response => {
+              const payload = response
+          })  
+    }
 
     useEffect(() => {
-		axios.get(api)
+		axios.get(api,{ headers: {
+            Authorization: `Bearer ${token}`
+                }
+            })
         .then(response => {
             const payload = response.data;
             setData(payload)
@@ -31,8 +46,7 @@ const IklanSaya = (props, {match}) => {
     let pageNumber = [];
     let i = 1;
     let x;
-
-    console.log(data && data && data.total_page)
+    
     let total_page =  data.total_page + 1
     
     while (i < total_page) {
@@ -95,11 +109,14 @@ const IklanSaya = (props, {match}) => {
                                                 <a className="subtitle" href={`/${item.id_service_provider}/detail`}>Lokasi : {item.location}</a>
                                             </div>
                                             <div className="subtitle">
-                                                Hapus
+                                                <a className="subtitle" href="#" onClick={hapusIklan(item.id_various_services)} >Hapus</a>
                                             </div>
                                         </div>
                                         <div>
                                             <a className="subtitle" href={`/${item.id_service_provider}/detail`}>Harga : Rp {item.price}</a>
+                                        </div>
+                                        <div>
+                                            
                                         </div>
                                     </div>
                                 </div>

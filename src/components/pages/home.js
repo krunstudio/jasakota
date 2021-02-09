@@ -9,7 +9,7 @@ const Home = props => {
             <div className="row justify-content-center">
                 <div className="col-md-8" style={{height:400, width:'100%', margin:30}}>
                 <div style={{marginBottom:50}}>
-                    <h1 className="text-header fade-in-right">Lorem ipsum dolor sit amet
+                    <h1 className="text-header fade-in-right">Solusi Hebat Mencari Jasa
                     </h1>
                     <img className="card" src="https://mdbootstrap.com/img/Photos/Others/gradient1.jpg" style={{width:'100%', hight:400}}></img>
                 </div>

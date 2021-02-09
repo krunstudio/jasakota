@@ -5,6 +5,8 @@ import { Button, Modal } from 'react-bootstrap';
 
 const Navbar = props => {
 
+  console.log(props)
+
     let data = props.data;
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
