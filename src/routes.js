@@ -14,8 +14,8 @@ const Routes = props => {
     let slug = window.location.pathname.replace('/', '')
     let data = props.dataCategory
     return (
+      <div>
         <Router>
-          <div>
             <Switch>
               <Route path="/kategori/:id" render={(props) => <Listjasa {...props} slug={slug}  />} >
               </Route>
@@ -35,8 +35,8 @@ const Routes = props => {
                 <Home {...props}/>
               </Route>
             </Switch>
-          </div>
         </Router>
+      </div>
     )
 }
 

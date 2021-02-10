@@ -48,6 +48,9 @@ const App = props => {
         <div>
           <Navbar {...props} data={data} cariJasa={cariJasa} setData={setData}/>
           <Routers {...props} slug={slug}/>
+          <div className="col-12 text-align-center footer row margin-0">
+              <span className="">© 2020 Sobatjasa</span>
+            </div>
         </div>
       );
     }
