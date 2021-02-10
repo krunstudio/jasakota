@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import ModalLogin from '../components/modal/login'
 import { Button, Modal } from 'react-bootstrap';
+import logo from '../assets/logo-sobatjasa.png'
 
 
 const Navbar = props => {
-
-  console.log(props)
 
     let data = props.data;
     const [show, setShow] = useState(false);
@@ -13,13 +12,13 @@ const Navbar = props => {
     const handleShow = () => setShow(true);
 
     return (
-        <div className="navbar-light bg-light">
+        <div className="navbar-light">
         <Modal size="lg" show={show} onHide={handleClose} size="md" aria-labelledby="contained-modal-title-vcenter" centered justify-content="center">
           <ModalLogin/>
         </Modal>
         <div className="row justify-content-center margin-0">
           <nav className="navbar navbar-expand-lg col-md-8">
-            <a className="navbar-brand" href="/">Jasakota</a>
+            <a className="navbar-brand" href="/"><img className="logo" src={logo}/></a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
