@@ -49,7 +49,7 @@ const Listjasa = (props, {match}) => {
     return (
         <div>
             <div className="row justify-content-center">
-                <div className="col-md-8" style={{height:400, width:'100%', margin:30}}>
+                <div className="col-md-8" style={{width:'100%', margin:30}}>
                     <div style={{marginBottom:50}}>
                         <a>{(data.category_title)? 'Menampilkan kategori ' + data.category_title : (props.match.params.slug === undefined)? 'Belum ada jasa untuk kategori ini' : (data.data && data.data.length < 1)? 'Hasil pencarian untuk '  + props.match.params.slug + ' tidak ditemukan' : 'Menampilan hasil pencarian ' + props.match.params.slug}</a>
                     </div>

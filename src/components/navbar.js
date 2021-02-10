@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ModalLogin from '../components/modal/login'
 import { Button, Modal } from 'react-bootstrap';
-import logo from '../assets/logo-sobatjasa.png'
+import logo from '../assets/logo-sobatjasa.png';
 
 
 const Navbar = props => {

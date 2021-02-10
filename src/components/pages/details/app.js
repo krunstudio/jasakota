@@ -23,7 +23,7 @@ const Details = (props, tes) => {
     return (
         <div>
             <div className="row justify-content-center">
-                <div className="col-md-8" style={{height:400, width:'100%', margin:30}}>
+                <div className="col-md-8" style={{ width:'100%', margin:30}}>
                     <div style={{marginBottom:50}}>
                         {/* <img className="card detail-image" src="https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png"></img> */}
                         <img className="card detail-image" src={image}></img>
