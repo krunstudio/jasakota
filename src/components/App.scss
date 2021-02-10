@@ -133,6 +133,31 @@ a {
     color: #ffffffed;
 }
 
+.padding-0{
+  padding: 0px !important;
+}
+
+.category-image{
+  img{
+    border-radius: 5px;
+  }
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.banner{
+  @media screen and (max-width:768px) {
+    margin-bottom: 50px;
+    margin: -16px;
+    margin-bottom: 0px;
+  }
+}
+
+
+.mb-20{
+  margin-bottom: 20px;
+}
+
 .fade-in {
 	animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }

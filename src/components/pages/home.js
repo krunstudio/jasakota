@@ -1,31 +1,35 @@
 import React from 'react';
 import Navbar from '../navbar';
 import image from '../../assets/image2.jpg'
+import banner1 from '../../assets/banner-1.png'
+import banner1Mobile from '../../assets/banner-1-mobile.png'
+
 
 
 const Home = props => {
     return (
         <div> 
-            <div className="row justify-content-center">
+            <div className="row justify-content-center margin-0">
                 <div className="col-md-8" style={{height:400, width:'100%', margin:30}}>
-                <div style={{marginBottom:50}}>
-                    <h1 className="text-header fade-in-right">Solusi Hebat Mencari Jasa
-                    </h1>
-                    <img className="card" src="https://mdbootstrap.com/img/Photos/Others/gradient1.jpg" style={{width:'100%', hight:400}}></img>
+                <div style={{marginBottom:50}} className="banner">
+                    {/* <h1 className="text-header fade-in-right">Solusi Hebat Mencari Jasa</h1> */}
+                    <img className="card d-md-block d-none" src={banner1} style={{width:'100%', hight:400}}></img>
+                    <img className="card d-md-none d-block" src={banner1Mobile} style={{width:'100%'}}></img>
+
                 </div>
                 <div>
-                    <hr style={{marginBottom:50}}/>
+                    <hr style={{marginBottom:50}} className="d-md-block d-none"/>
                 </div>
                 <div className="row">
                     {props.dataCategory.map((item,key) =>{
                         return(
-                            <div className="col-md-4 fade-in">
+                            <div className="col-md-4 col-6 fade-in">
                                 <a href={'/kategori/' + item.title.replace(/ /g, '')}>
-                                    <div  className="card" style={{height:200, margin:20}}>
-                                        <img style={{height:'100%'}} src={image}/>
+                                    <div  className="card category-image">
+                                        <img src={image}/>
                                     </div>
                                 </a>
-                                <div className="text-align-center">
+                                <div className="text-align-center mb-20">
                                     <b>{item.title}</b>
                                 </div>
                             </div>
