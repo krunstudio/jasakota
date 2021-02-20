@@ -1,13 +1,20 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import axios from 'axios'
+import { Modal } from 'react-bootstrap'
+import ModalLogin from '../../modal/login'
 const token = localStorage.getItem('token')
 const userId = localStorage.getItem('id')
+
 
 
 const PasangIklan = (props) => {
 
     const [data, setData] = useState();
     let url = 'http://api.devsoft.my.id/public/Api';
+
+    const [show, setShow] = useState((token == null)? true : false);
+    const handleClose = () => window.location.href = "/";
+    const handleShow = () => setShow(true);
 
     const submit = e => {
         if (e) e.preventDefault();
@@ -29,6 +36,9 @@ const PasangIklan = (props) => {
 			})}
     return (
         <div>
+            <Modal size="lg" show={show} onHide={handleClose} size="md" aria-labelledby="contained-modal-title-vcenter" centered justify-content="center">
+                <ModalLogin/>
+            </Modal>
             <div className="row justify-content-center">
                 <div className="col-md-6 card margin-top-60 box-shadow">
                     <div className="col-md-12">

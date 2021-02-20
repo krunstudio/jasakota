@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {useLocation} from "react-router-dom";
 import image from '../../../assets/image2.jpg'
 import axios from 'axios'
+import { Modal } from 'react-bootstrap';
+import ModalLogin from '../../modal/login'
 const token = localStorage.getItem('token')
 const userId = localStorage.getItem('id')
 
@@ -10,6 +12,9 @@ const userId = localStorage.getItem('id')
 
 const IklanSaya = (props, {match}) => {
 
+    const [show, setShow] = useState((token == null)? true : false);
+    const handleClose = () => window.location.href = "/";
+    const handleShow = () => setShow(true);
     const useQuery = () => {
         return new URLSearchParams(useLocation().search);
       }
@@ -60,6 +65,9 @@ const IklanSaya = (props, {match}) => {
 
     return (
         <div>
+            <Modal size="lg" show={show} onHide={handleClose} size="md" aria-labelledby="contained-modal-title-vcenter" centered justify-content="center">
+                <ModalLogin/>
+            </Modal>
             <div className="row justify-content-center">
                 <div className="col-md-8" style={{height:400, width:'100%', margin:30}}>
                     <div style={{marginBottom:50}}>
