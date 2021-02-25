@@ -7,10 +7,13 @@ import banner1Mobile from '../../assets/banner-1-mobile.png'
 
 
 const Home = props => {
+
+    const url = 'https://api.devsoft.my.id/public'
+
     return (
         <div> 
             <div className="row justify-content-center margin-0">
-                <div className="col-md-8" style={{width:'100%', margin:30}}>
+                <div className="col-md-8 home" >
                 <div style={{marginBottom:50}} className="banner">
                     <img className="card d-md-block d-none" src={banner1} style={{width:'100%', hight:400}}></img>
                     <img className="card d-md-none d-block" src={banner1Mobile} style={{width:'100%'}}></img>
@@ -25,7 +28,7 @@ const Home = props => {
                             <div className="col-md-4 col-6 fade-in">
                                 <a href={'/kategori/' + item.title.replace(/ /g, '')}>
                                     <div  className="card category-image">
-                                        <img src={image}/>
+                                        <img src={(item.image) ? url + item.image.replace('.','') : image}/>
                                     </div>
                                 </a>
                                 <div className="text-align-center mb-20">

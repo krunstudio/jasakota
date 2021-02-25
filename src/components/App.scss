@@ -140,9 +140,17 @@ a {
 .category-image{
   img{
     border-radius: 5px;
+    max-height: auto;
+    @media screen and (max-width:768px) {
+      max-height: 16vh;
+    }
   }
-  height: auto;
   margin-bottom: 20px;
+}
+
+.home{
+  width:100%;
+  margin-top:25px;
 }
 
 .navbar-bg{
