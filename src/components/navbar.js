@@ -36,13 +36,13 @@ const Navbar = props => {
                   <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/iklan-saya">Iklan saya</a>
+                  <a className="nav-link" href="iklan-saya">Iklan saya</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="pasang-iklan">Pasang Iklan</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={(token)? logout : handleShow}>{(token)? 'Keluar' : 'Masuk'}</a>
+                  <a className="nav-link" onClick={(token)? logout : handleShow}>{(token)? 'Keluar' : 'Masuk'}</a>
                 </li>
               </ul>
               <form className="form-inline my-2 my-lg-0" onSubmit={props.cariJasa}>

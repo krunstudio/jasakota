@@ -153,6 +153,10 @@ a {
   margin-top:25px;
 }
 
+.nav-link{
+  cursor: pointer;
+}
+
 .navbar-bg{
   background-color: #39b6ff!important;
 }
@@ -258,4 +262,8 @@ h5 {
 
 .card{
   border: none !important;
+}
+
+.auth{
+  color: red;
 }

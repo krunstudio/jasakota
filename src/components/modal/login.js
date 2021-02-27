@@ -10,6 +10,7 @@ import localStorage from 'localStorage';
 const ModalLogin = (props) => {
 
     const [show, setShow] = useState(false);
+    const [authVerification, setAuthVerification] = useState('')
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [data, setData] = useState([]);
@@ -45,6 +46,7 @@ const ModalLogin = (props) => {
 			})
 			.catch(error => {
 				;
+                setAuthVerification('Email atau Password salah!')
 				throw (error)
 			})
     }
@@ -59,7 +61,9 @@ const ModalLogin = (props) => {
         </Modal.Header>
 
         <Modal.Body>
-
+            <div className="auth hide">
+                {authVerification}
+            </div>
             <form>
                 <div className="mb-3">
                     <label className="form-label">Email</label>
