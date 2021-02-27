@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import ModalLogin from '../components/modal/login'
 import { Button, Modal } from 'react-bootstrap';
 import logo from '../assets/logo-sobatjasa.png';
+const token = localStorage.getItem('token')
+const userId = localStorage.getItem('id')
 
 
 const Navbar = props => {
@@ -10,6 +12,12 @@ const Navbar = props => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const logout = (e) => {
+      localStorage.clear()
+      window.location.href = '/';
+  }
+  
 
     return (
         <div className="navbar-light">
@@ -34,7 +42,7 @@ const Navbar = props => {
                   <a className="nav-link" href="pasang-iklan">Pasang Iklan</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={handleShow}>Masuk</a>
+                  <a className="nav-link" href="#" onClick={(token)? logout : handleShow}>{(token)? 'Keluar' : 'Masuk'}</a>
                 </li>
               </ul>
               <form className="form-inline my-2 my-lg-0" onSubmit={props.cariJasa}>
